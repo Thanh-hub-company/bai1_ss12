@@ -1,0 +1,23 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: promotion-service
+
+  # Cấu hình kết nối Redis để bắn tin nhắn vào Channel "promotion-updates"
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  # Cấu hình H2 Database cho Promotion
+  datasource:
+    url: jdbc:h2:mem:promotiondb
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
